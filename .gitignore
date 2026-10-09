@@ -1,0 +1,14 @@
+# 发行版附件（体积大，不入版本控制）
+/FILE/
+/Compile/Compile-include/
+/Compile/Home/
+
+# 运行时产物
+log.ini
+*.log
+*.tmp
+
+# 系统文件
+Thumbs.db
+desktop.ini
+.DS_Store

@@ -1,0 +1,19 @@
+namefile {Option Vlaue}
+	 Options:
+		 -pre: Remove given prefix.
+		 +pre: Add given prefix.
+		 -sub: Remove given subfix. Subfix Do Not include File Extension.
+		 +sub: Add given subfix.
+		 -skip: Skip given extension, such as '.exe'.
+		 -path: Specific the path of dir. Default: Current Directory.
+			You can omit '-path' if the Path is the Last one of arg(s).
+
+namefile {Option Vlaue}
+	 选项：
+		 -pre：删除给定的前缀。
+		 +pre：添加给定的前缀。
+		 -sub：删除给定的后缀。后缀不包括文件扩展名。
+		 +sub：添加给定的后缀。
+		 -skip：跳过给定的扩展名，例如“.exe”。
+		 -path：指定目录的路径。默认值：当前目录。
+			如果 Path 是 arg（s） 的最后一个路径，则可以省略 '-path'。

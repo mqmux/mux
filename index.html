@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Termux VCC · 第三方命令和一些工具集合</title>
+<meta name="description" content="Termux VCC —— 为了方便操作 Windows 而生的命令行脚本与 Windows API 工具集合。" />
+<style>
+  :root{--bg:#0d1117;--panel:#161b22;--border:#30363d;--fg:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--green:#238636}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);line-height:1.7;-webkit-font-smoothing:antialiased;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px}
+  header{border-bottom:1px solid var(--border)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+  nav .brand{display:flex;align-items:center;gap:10px;font-weight:600}
+  nav .links a{margin-left:18px;color:var(--muted);font-size:14px}
+  nav .links a:hover{color:var(--fg)}
+  .hero{text-align:center;padding:64px 0 48px}
+  .hero h1{font-size:38px;margin:22px 0 8px;letter-spacing:1px;font-family:ui-monospace,Consolas,monospace}
+  .hero .tag{color:var(--muted);font-size:17px;margin:0 0 22px}
+  .badges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:26px}
+  .badge{font-size:12px;padding:3px 10px;border-radius:999px;border:1px solid var(--border);color:var(--muted);background:var(--panel)}
+  .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;padding:11px 26px;border-radius:8px;font-size:15px;font-weight:500;border:1px solid transparent}
+  .btn.primary{background:var(--green);color:#fff}
+  .btn.primary:hover{background:#2ea043;color:#fff;text-decoration:none}
+  .btn.ghost{border-color:var(--border);color:var(--fg);background:var(--panel)}
+  .btn.ghost:hover{border-color:var(--muted);text-decoration:none}
+  section{padding:40px 0;border-top:1px solid var(--border)}
+  h2{font-size:22px;margin:0 0 6px}
+  h2+p.sub{color:var(--muted);margin:0 0 26px;font-size:15px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:22px}
+  .card h3{margin:0 0 8px;font-size:16px}
+  .card p{margin:0;color:var(--muted);font-size:14px}
+  code{background:#0d1117;border:1px solid var(--border);border-radius:5px;padding:1px 6px;font-size:13px;color:#79c0ff;font-family:ui-monospace,Consolas,monospace}
+  ol.steps{padding-left:22px;color:var(--muted)}
+  ol.steps li{margin-bottom:10px}
+  ol.steps strong,ol.steps li code{color:var(--fg)}
+  .note{background:var(--panel);border:1px solid var(--border);border-left:3px solid #d29922;border-radius:8px;padding:16px 20px;color:var(--muted);font-size:14px}
+  .note b{color:#d29922}
+  footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="brand">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect width="24" height="24" rx="6" fill="#1f6feb"/>
+          <path d="M7 8.5l3.2 3.5L7 15.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12.8 15.8h4.2" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        Termux VCC
+      </div>
+      <div class="links">
+        <a href="#features">功能</a>
+        <a href="#install">安装</a>
+        <a href="https://github.com/mqmux/mux">仓库</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <svg width="104" height="104" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect width="24" height="24" rx="5.5" fill="#1f6feb"/>
+      <path d="M6.5 8.2l3.6 3.8-3.6 3.8" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M12.6 16h5" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/>
+    </svg>
+    <h1>TERMUX VCC</h1>
+    <p class="tag">第三方命令和一些工具集合</p>
+    <div class="badges">
+      <span class="badge">C / C++</span>
+      <span class="badge">ver 1.4.4</span>
+      <span class="badge">MIT</span>
+      <span class="badge">Windows</span>
+      <span class="badge">免运行库</span>
+    </div>
+    <div class="btns">
+      <a class="btn primary" href="https://gitee.com/cctv3058084277/main/releases/download/TERMUX-VCC/TERMUX-VCC-1.4.4.exe">下载 TERMUX-VCC 1.4.4</a>
+      <a class="btn ghost" href="https://github.com/mqmux/mux">查看仓库</a>
+    </div>
+  </div>
+
+  <section>
+    <h2>这是什么</h2>
+    <p class="sub">一套跑在 cmd 里的命令集合</p>
+    <p>本集合意在为了方便操作 Windows。如果你对命令行脚本、Windows API 感兴趣，本集合很可能会帮到你。</p>
+    <p style="color:var(--muted)">想在上面用 Linux 那种命令？想深入了解句柄、内存、命令行的本质？想学 shell 脚本、各脚本之间的调用、自己写命令？—— 这是一个通过 shell 脚本调用的集合，以 cmd 为基础运行：你既能用 cmd 自带的命令，也能用本集合提供的命令。</p>
+  </section>
+
+  <section id="features">
+    <h2>功能组成</h2>
+    <p class="sub">四个部分，各司其职</p>
+    <div class="grid">
+      <div class="card"><h3>外部命令</h3><p><code>Compile-bin</code> 目录下是所有的外部命令。</p></div>
+      <div class="card"><h3>宏命令</h3><p>宏命令在 <code>Termux.bat</code> 内定义。</p></div>
+      <div class="card"><h3>轻量工具集</h3><p><code>Compile-include</code> 收集了体积较小的 Everything、Tcc、sqlite、spy++、NeatDM 等工具。</p></div>
+      <div class="card"><h3>发行版附件</h3><p>FILE 目录下收集了 notepad++ 8.1.0、VIM82、Gcc 3.4.0、CuteHttpFileServer、JiYuTrainer 等。</p></div>
+    </div>
+  </section>
+
+  <section id="install">
+    <h2>安装使用</h2>
+    <p class="sub">专为小白设计，默认不需要修改任何参数</p>
+    <ol class="steps">
+      <li>下载发行版 exe（上方按钮）。</li>
+      <li><strong>右键以管理员身份运行</strong>，直接安装即可，集合会自动完成添加。</li>
+      <li>安装完成后，在桌面或资源管理器中<strong>右键 → Termux</strong>，即可在该路径下打开控制台。</li>
+      <li>版本有更新时初始页面会提示升级，运行 <code>install -d</code> 即可更新。</li>
+    </ol>
+    <div class="note"><b>注意</b>：本集合不依赖任何运行库，安装一次即可长期使用；安装过程包含注册表操作，因此需要管理员权限。</div>
+  </section>
+
+  <section>
+    <h2>常见问题</h2>
+    <p class="sub">先看这里，多半能解决</p>
+    <div class="card" style="margin-bottom:14px">
+      <h3>杀毒软件报毒怎么办？</h3>
+      <p>报毒属于正常现象。外部命令需要调用系统 API 才能做更多事情，容易被启发式引擎误判；如不放心可直接查看源码。</p>
+    </div>
+    <div class="card">
+      <h3>安装完不知道怎么启动？</h3>
+      <p>右键桌面或资源管理器，点击「Termux 将在此路径下打开控制台」。</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">TERMUX VCC · 第三方命令和一些工具集合 · <a href="https://github.com/mqmux/mux">GitHub</a></div>
+</footer>
+</body>
+</html>
